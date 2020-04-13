@@ -59,7 +59,7 @@ Web Based Font Generator That Does Not Require Internet Access
 -DirectionS-                                                                            
                                                                   
 
-Simply place the main folder onto your desktop.
+Simply place the folder in the master folder of your downloaded zip folder onto your desktop.
 You can drag the Lit Font Generator shortcut to your desktop for easy access.
 You can also use the hot key "ctrl+alt+L" to automatically open the web app.
 This will be updated often.
