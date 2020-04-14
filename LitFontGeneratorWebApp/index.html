@@ -2,13 +2,17 @@
 <html lang="en" document.domain="index.LFG.com">
 
 <head>
+	<link href="assets/spop.css" rel="stylesheet">
     <link rel="icon" url="assets/icon.png">
 	<link rel="shortcut icon" url="assets/icon.ico"
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scaleable=no" charset="UTF-8">
-    <script type="text/javascript" src="assetsjquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, charset="UTF-8">
+    <script type="text/javascript" src="assets/jquery.min.js"></script>
     <script type="text/javascript" src="assets/particles.js"></script>
     <script type="text/javascript" src="assets/particles.min.js"></script>
+	<script type="text/javascript" src="assets/spop.js"></script>
+
     <body>
+
         <style>
             /* ---- reset ---- */
             
@@ -69,10 +73,10 @@
                     </button>
                     <div class="dropdown-content" id="myDropdown">
                         <a href="#twf">Type Writer Font</a>
-                        <a onclick=POPgtf() href="#gtf">Gothic Type Font</a>
-                        <a onclick=POPgbf() href="#gbf">Gothic Bold Font</a>
+                        <a href="#gtf">Gothic Type Font</a>
+                        <a href="#gbf">Gothic Bold Font</a>
                         <a href="#sf">Script Font</a>
-                        <a href="#sbf">Script Bold Font</a>
+                        <a href="#bsf">Script Bold Font</a>
                     </div>
                 </div>
 
@@ -99,77 +103,7 @@
             </script>
 
         </div>
-        <style>
-                /* -------------------------------------pop up css for gbf--------------------- */
-            /* Popup container - can be anything you want */
-            
-            .popup {
-                position: relative;
-                display: inline-block;
-                cursor: pointer;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
-            /* The actual popup */
-            
-            .popup .popuptext {
-                visibility: hidden;
-                display: -ms-flexbox;
-                font-size: small;
-                width: 132px;
-                color: linen;
-                background: linear-gradient(90deg, rgba(6, 6, 6, 1) 0%, rgba(46, 45, 45, 1) 42%, rgba(122, 0, 0, 1) 100%);
-                text-align: center;
-                border-radius: 6px;
-                padding: 8px 0;
-                position: absolute;
-                z-index: 3;
-                bottom: -17%;
-                left: 120%;
-                margin-left: -80px;
-            }
-            /* Popup arrow */
-            
-            .popup .popuptext::after {
-                content: "";
-                position: absolute;
-                z-index: -1;
-                top: 105%;
-                left: 19%;
-                margin-left: -5px;
-                border-width: 10px;
-                border-style: solid;
-                border-color: #555 transparent transparent transparent;
-            }
-            /* Toggle this class - hide and show the popup */
-            
-            .popup .show {
-                visibility: visible;
-                -webkit-transition: opacity 7s ease-in-out;
-                -moz-transition: opacity 35s ease-in-out;
-                -ms-transition: opacity 5s ease-in-out;
-                -o-transition: opacity 5s ease-in-out;
-                opacity: 0;
-                /* Add animation (fade in the popup) */
-                @-webkit-keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                    }
-                    to {
-                        opacity: 1;
-                    }
-                }
-                @keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                    }
-                    to {
-                        opacity: 1;
-                    }
-                }
-        </style>
+       
         <style>
             /*------------------------------navbar and dropdown CSS-----------------------------*/
             
@@ -281,6 +215,75 @@
 <br>
 <font color="red">------------------------------------------------------------------------------------</font>
 <br>
+<body>
+    <form>
+        <style>
+            .form {
+                border: 1px solid black;
+                text-align: center;
+                outline: none;
+                min-width: 4px;
+            }
+            
+            span {
+                display: inline-block;
+
+            }
+        </style>
+        <font hide="false" color="red">
+            <a id=UL></a>
+            <h1>Add Under Line</h1>
+        </font>
+        <br>
+        <font color="red">
+            <span><input class="form" type="text" name="ULoutputr" id="ULoutputr" style="margin:0 1em; padding:0 1em; max-width:700px; " placeholder="Preview: a̲A̲b̲B̲c̲C̲d̲D̲" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';"
+                         autofocus="true"></span>
+            <script>
+                $('input').css('width', ((input.getAttribute('placeholder').length + 1) * 8) + 'px');
+                $("ULoutputr").focusout(function() {
+
+                    if (this.value.length > 0) {
+                        this.style.width = ((this.value.length + 1) * 8) + 'px';
+                    } else {
+                        this.style.width = ((this.getAttribute('placeholder').length + 1) * 8) + 'px';
+                    }
+                }),
+            </script>
+            <button type="button" onclick="ULOP()">Generate
+
+            <script>
+    function ULOP(){
+        ULoutput1();
+        ULoutput2();
+		spop('<strong>Copy Success!</strong>', 'success');
+    }
+</script>
+            <script>
+function ULoutput1() {
+  var str = document.getElementById('ULoutputr').value;
+  var res = str.split('').join('͟');
+  document.getElementById('ULoutputr').value = res;
+    var str = document.getElementById('ULoutputr').value;
+  var res = str.replace(/ /, " ");
+  document.getElementById('ULoutputr').value = res;
+
+}
+</script>
+    <script>
+    function ULoutput2() {
+    var copyText = document.getElementById("ULoutputr");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("cut");
+    return false;
+    }
+  </script>
+    </font>
+    </button>
+    </form>
+</body>
+
+<br>
 
 <body>
     <form>
@@ -321,6 +324,7 @@
     function TWOP(){
         TWoutput1();
         TWoutput2();
+		spop('<strong>Copy Success!</strong>', 'success');
     }
 </script>
             <script>
@@ -590,20 +594,20 @@ function TWoutput1() {
     var copyText = document.getElementById("TWoutputr");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
-    alert("Copied the text: " + copyText.value);
     document.execCommand("cut");
     return false;
     }
   </script>
     </font>
     </button>
-	            <button type="button" onclick="TWUOP()">U̲
+	<button type="button" onclick="TWUOP()">U̲
 
             <script>
     function TWUOP(){
 	    TWUinitOP();
         TWUoutput1();
         TWUoutput2();
+		spop('<strong>Copy Success!</strong>', 'success');
     }
 </script>
 	<script>
@@ -881,7 +885,6 @@ function TWUoutput1() {
     var copyText = document.getElementById("TWoutputr");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
-    alert("Copied the text: " + copyText.value);
     document.execCommand("cut");
     return false;
     }
@@ -908,14 +911,11 @@ function TWUoutput1() {
                 display: inline-block;
             }
         </style>
-        <font hide="false" color="red">
-            <a>
-                <div class="popup" id="gtf">
+    <font hide="false" color="red">
+           <a>
+		<div>
                     <h1>
                         Gothic Type Font
-                        <span class="popuptext" id="gtfPopup">here it is!
-
-            </span>
                     </h1>
         </font>
         </div>
@@ -941,6 +941,7 @@ function TWUoutput1() {
     function GTOP(){
         GToutput1();
         GToutput2();
+		spop('<strong>Copy Success!</strong>', 'success');
     }
 </script>
             <script>
@@ -1211,7 +1212,6 @@ function GToutput1() {
     var copyText = document.getElementById("GToutputr");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
-    alert("Copied the text: " + copyText.value);
     document.execCommand("cut");
     }
   </script>
@@ -1223,6 +1223,7 @@ function GToutput1() {
 		GTUinitOP();
         GTUoutput1();
         GTUoutput2();
+		spop('<strong>Copy Success!</strong>', 'success');
     }
 </script>
 	<script>
@@ -1501,8 +1502,8 @@ function GTUoutput1() {
     var copyText = document.getElementById("GToutputr");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
-    alert("Copied the text: " + copyText.value);
     document.execCommand("cut");
+	return false;
     }
   </script>
     </font>
@@ -1531,12 +1532,9 @@ function GTUoutput1() {
 
 
             <a>
-                <div class="popup" id="gbf">
+                <div>
                     <h1>
                         Gothic Bold Font
-                        <span class="popuptext" id="gbfPopup">here it is!
-
-                    </span>
                     </h1>
         </font>
         </div>
@@ -1562,6 +1560,7 @@ function GTUoutput1() {
     function GTBOP(){
         GTBoutput1();
         GTBoutput2();
+		spop('<strong>Copy Success!</strong>', 'success');
     }
 </script>
             <script>
@@ -1831,7 +1830,297 @@ function GTBoutput1() {
     var copyText = document.getElementById("GTBoutputr");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
-    alert("Copied the text: " + copyText.value);
+    document.execCommand("cut");
+    return false;
+    }
+  </script>
+    </font>
+    </button>
+	<button type="button" onclick="GTBUOP()">U̲
+
+            <script>
+    function GTBUOP(){
+	    GTBUinitOP();
+        GTBUoutput1();
+        GTBUoutput2();
+		spop('<strong>Copy Success!</strong>', 'success');
+    }
+</script>
+	<script>
+		function GTBUinitOP() {
+		var str = document.getElementById('GTBoutputr').value;
+		var res = str.split('').join('͟');
+		document.getElementById('GTBoutputr').value = res;
+
+		}
+	</script>
+            <script>
+function GTBUoutput1() {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/a/g, "𝖆");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/A/g, "𝕬");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/b/g, "𝖇");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/B/g, "𝕭");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/c/g, "𝖈");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/C/g, "𝕮");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/d/g, "𝖉");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/D/g, "𝕯");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/e/g, "𝖊");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/E/g, "𝕰");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/f/g, "𝖋");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/F/g, "𝕱");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/g/g, "𝖌");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/G/g, "𝕲");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/h/g, "𝖍");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/H/g, "𝕳");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/i/g, "𝖎");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/I/g, "𝕴");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/j/g, "𝖏");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/J/g, "𝕵");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/k/g, "𝖐");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/K/g, "𝕶");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/l/g, "𝖑");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/L/g, "𝕷");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/m/g, "𝖒");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/M/g, "𝕸");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/n/g, "𝖓");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/N/g, "𝕹");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/o/g, "𝖔");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/O/g, "𝕺");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/p/g, "𝖕");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/P/g, "𝕻");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/q/g, "𝖖");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/Q/g, "𝕼");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/r/g, "𝖗");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/R/g, "𝕽");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/s/g, "𝖘");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/S/g, "𝕾");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/t/g, "𝖙");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/T/g, "𝕿");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/u/g, "𝖚");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/U/g, "𝖀");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/v/g, "𝖛");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/V/g, "𝖁  ");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/w/g, "𝖜");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/W/g, "𝖂");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/x/g, "𝖝");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/X/g, "𝖃");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/y/g, "𝖞");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/Y/g, "𝖄");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/z/g, "𝖟");
+  document.getElementById('GTBoutputr').value = res;
+  {
+  var str = document.getElementById('GTBoutputr').value;
+  var res = str.replace(/Z/g, "𝖅");
+  document.getElementById('GTBoutputr').value = res;
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+</script>
+            <script>
+    function GTBUoutput2() {
+    var copyText = document.getElementById("GTBoutputr");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
     document.execCommand("cut");
     return false;
     }
@@ -1841,6 +2130,8 @@ function GTBoutput1() {
     </form>
 </body>
 <br>
+
+
 
 <body>
     <form>
@@ -1881,6 +2172,7 @@ function GTBoutput1() {
     function SFOP(){
         SFoutput1();
         SFoutput2();
+		spop('<strong>Copy Success!</strong>', 'success');
     }
 </script>
             <script>
@@ -2150,7 +2442,297 @@ function SFoutput1() {
     var copyText = document.getElementById("SFoutputr");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
-    alert("Copied the text: " + copyText.value);
+    document.execCommand("cut");
+    return false;
+    }
+  </script>
+    </font>
+    </button>
+		<button type="button" onclick="SFUOP()">U̲
+
+            <script>
+    function SFUOP(){
+	    SFUinitOP();
+        SFUoutput1();
+        SFUoutput2();
+		spop('<strong>Copy Success!</strong>', 'success');
+    }
+</script>
+	<script>
+		function SFUinitOP() {
+		var str = document.getElementById('SFoutputr').value;
+		var res = str.split('').join('͟'); 
+		document.getElementById('SFoutputr').value = res;
+
+		}
+	</script>
+            <script>
+function SFUoutput1() {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/a/g, "𝒶");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/A/g, "𝒜");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/b/g, "𝒷");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/B/g, "𝐵");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/c/g, "𝒸");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/C/g, "𝒞");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/d/g, "𝒹");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/D/g, "𝒟");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/e/g, "𝑒");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/E/g, "𝐸");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/f/g, "𝒻");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/F/g, "𝐹");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/g/g, "𝑔");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/G/g, "𝒢");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/h/g, "𝒽");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/H/g, "𝐻");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/i/g, "𝒾");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/I/g, "𝐼");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/j/g, "𝒿");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/J/g, "𝒥");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/k/g, "𝓀");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/K/g, "𝒦");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/l/g, "𝓁");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/L/g, "𝐿");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/m/g, "𝓂");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/M/g, "𝑀");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/n/g, "𝓃");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/N/g, "𝒩");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/o/g, "𝑜");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/O/g, "𝒪");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/p/g, "𝓅");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/P/g, "𝒫");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/q/g, "𝓆");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/Q/g, "𝒬");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/r/g, "𝓇");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/R/g, "𝑅");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/s/g, "𝓈");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/S/g, "𝒮");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/t/g, "𝓉");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/T/g, "𝒯");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/u/g, "𝓊");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/U/g, "𝒰");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/v/g, "𝓋");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/V/g, "𝒱");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/w/g, "𝓌");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/W/g, "𝒲");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/x/g, "𝓍");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/X/g, "𝒳");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/y/g, "𝓎");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/Y/g, "𝒴");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/z/g, "𝓏");
+  document.getElementById('SFoutputr').value = res;
+  {
+  var str = document.getElementById('SFoutputr').value;
+  var res = str.replace(/Z/g, "𝒵");
+  document.getElementById('SFoutputr').value = res;
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+</script>
+            <script>
+    function SFUoutput2() {
+    var copyText = document.getElementById("SFoutputr");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
     document.execCommand("cut");
     return false;
     }
@@ -2177,7 +2759,7 @@ function SFoutput1() {
             }
         </style>
         <font hide="false" color="red">
-            <a id=sf></a>
+            <a id=bsf></a>
             <h1>Bold Script Font</h1>
         </font>
         <br>
@@ -2201,6 +2783,7 @@ function SFoutput1() {
     function BSFOP(){
         BSFoutput1();
         BSFoutput2();
+		spop('<strong>Copy Success!</strong>', 'success');
     }
 </script>
             <script>
@@ -2470,7 +3053,297 @@ function BSFoutput1() {
     var copyText = document.getElementById("BSFoutputr");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
-    alert("Copied the text: " + copyText.value);
+    document.execCommand("cut");
+    return false;
+    }
+  </script>
+    </font>
+    </button>
+			<button type="button" onclick="BSFUOP()">U̲
+
+            <script>
+    function BSFUOP(){
+	    BSFUinitOP();
+        BSFUoutput1();
+        BSFUoutput2();
+		spop('<strong>Copy Success!</strong>', 'success');
+    }
+</script>
+	<script>
+		function BSFUinitOP() {
+		var str = document.getElementById('BSFoutputr').value;
+		var res = str.split('').join('͟'); 
+		document.getElementById('BSFoutputr').value = res;
+
+		}
+	</script>
+            <script>
+function BSFUoutput1() {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/a/g, "𝓪");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/A/g, "𝓐");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/b/g, "𝓫");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/B/g, "𝓑");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/c/g, "𝓬");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/C/g, "𝓒");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/d/g, "𝓭");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/D/g, "𝓓");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/e/g, "𝓮");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/E/g, "𝓔");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/f/g, "𝓯");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/F/g, "𝓕");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/g/g, "𝓰");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/G/g, "𝓖");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/h/g, "𝓱");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/H/g, "𝓗");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/i/g, "𝓲");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/I/g, "𝓘");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/j/g, "𝓳");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/J/g, "𝓙");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/k/g, "𝓴");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/K/g, "𝓚");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/l/g, "𝓵");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/L/g, "𝓛");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/m/g, "𝓶");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/M/g, "𝓜");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/n/g, "𝓷");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/N/g, "𝓝");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/o/g, "𝓸");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/O/g, "𝓞");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/p/g, "𝓹");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/P/g, "𝓟");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/q/g, "𝓺");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/Q/g, "𝓠");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/r/g, "𝓻");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/R/g, "𝓡");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/s/g, "𝓼");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/S/g, "𝓢");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/t/g, "𝓽");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/T/g, "𝓣");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/u/g, "𝓾");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/U/g, "𝓤");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/v/g, "𝓿");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/V/g, "𝓥");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/w/g, "𝔀");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/W/g, "𝓦");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/x/g, "𝔁");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/X/g, "𝓧");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/y/g, "𝔂");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/Y/g, "𝓨");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/z/g, "𝔃");
+  document.getElementById('BSFoutputr').value = res;
+  {
+  var str = document.getElementById('BSFoutputr').value;
+  var res = str.replace(/Z/g, "𝓩");
+  document.getElementById('BSFoutputr').value = res;
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+</script>
+            <script>
+    function BSFUoutput2() {
+    var copyText = document.getElementById("BSFoutputr");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
     document.execCommand("cut");
     return false;
     }
@@ -2480,13 +3353,6 @@ function BSFoutput1() {
     </form>
 </body>
 <br>
-
-
-
-
-
-
-
 
 <body>
     <form>
@@ -2504,16 +3370,16 @@ function BSFoutput1() {
             }
         </style>
         <font hide="false" color="red">
-            <a id=UL></a>
-            <h1>Add Under Line</h1>
+            <a id=EF></a>
+            <h1>Engraved Font</h1>
         </font>
         <br>
         <font color="red">
-            <span><input class="form" type="text" name="ULoutputr" id="ULoutputr" style="margin:0 1em; padding:0 1em; max-width:700px; " placeholder="Preview: a̲A̲b̲B̲c̲C̲d̲D̲" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';"
+            <span><input class="form" type="text" name="EFoutputr" id="EFoutputr" style="margin:0 1em; padding:0 1em; max-width:700px; " placeholder="ℙℝ𝔼𝕍𝕀𝔼𝕎: 𝕒𝔸𝕓𝔹𝕔ℂ𝕕𝔻" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';"
                          autofocus="true"></span>
             <script>
                 $('input').css('width', ((input.getAttribute('placeholder').length + 1) * 8) + 'px');
-                $("ULoutputr").focusout(function() {
+                $("EFoutputr").focusout(function() {
 
                     if (this.value.length > 0) {
                         this.style.width = ((this.value.length + 1) * 8) + 'px';
@@ -2522,31 +3388,282 @@ function BSFoutput1() {
                     }
                 }),
             </script>
-            <button type="button" onclick="ULOP()">Generate
+            <button type="button" onclick="EFOP()">Generate
 
             <script>
-    function ULOP(){
-        ULoutput1();
-        ULoutput2();
+    function EFOP(){
+        EFoutput1();
+        EFoutput2();
+		spop('<strong>Copy Success!</strong>', 'success');
     }
 </script>
             <script>
-function ULoutput1() {
-  var str = document.getElementById('ULoutputr').value;
-  var res = str.split('').join('͟');
-  document.getElementById('ULoutputr').value = res;
-    var str = document.getElementById('ULoutputr').value;
-  var res = str.replace(/ /, " ");
-  document.getElementById('ULoutputr').value = res;
-
+function EFoutput1() {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/a/g, "𝕒");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/A/g, "𝔸");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/b/g, "𝕓");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/B/g, "𝔹");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/c/g, "𝕔");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/C/g, "ℂ");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/d/g, "𝕕");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/D/g, "𝔻");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/e/g, "𝕖");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/E/g, "𝔼");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/f/g, "𝕗");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/F/g, "𝔽");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/g/g, "𝕘");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/G/g, "𝔾");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/h/g, "𝕙");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/H/g, "ℍ");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/i/g, "𝕚");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/I/g, "𝕀");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/j/g, "𝕛");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/J/g, "𝕁");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/k/g, "𝕜");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/K/g, "𝕂");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/l/g, "𝕝");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/L/g, "𝕃");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/m/g, "𝕞");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/M/g, "𝕄");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/n/g, "𝕟");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/N/g, "ℕ");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/o/g, "𝕠");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/O/g, "𝕆");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/p/g, "𝕡");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/P/g, "ℙ");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/q/g, "𝕢");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/Q/g, "ℚ");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/r/g, "𝕣");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/R/g, "ℝ");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/s/g, "𝕤");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/S/g, "𝕊");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/t/g, "𝕥");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/T/g, "𝕋");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/u/g, "𝕦");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/U/g, "𝕌");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/v/g, "𝕧");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/V/g, "𝕍");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/w/g, "𝕨");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/W/g, "𝕎");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/x/g, "𝕩");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/X/g, "𝕏");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/y/g, "𝕪");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/Y/g, "𝕐");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/z/g, "𝕫");
+  document.getElementById('EFoutputr').value = res;
+  {
+  var str = document.getElementById('EFoutputr').value;
+  var res = str.replace(/Z/g, "ℤ");
+  document.getElementById('EFoutputr').value = res;
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
 }
 </script>
-    <script>
-    function ULoutput2() {
-    var copyText = document.getElementById("ULoutputr");
+            <script>
+    function EFoutput2() {
+    var copyText = document.getElementById("EFoutputr");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
-    alert("Copied the text: " + copyText.value);
     document.execCommand("cut");
     return false;
     }
@@ -2556,6 +3673,14 @@ function ULoutput1() {
     </form>
 </body>
 <br>
+
+
+
+
+
+
+
+
 
 
 
@@ -2714,10 +3839,35 @@ function ULoutput1() {
 
 </section>
 <section class="seccpyl">
+<font color="red" width="bold" size="5">User Text Array!</font>
+<br>
+<font color="white" size="5">
+<textarea placeholder="Create Unique font combinations here! When you select a text it will preview below!" id="quote" cols="50" rows="5">
 
+</textarea>
+<br>
+ Your selection preview will show here!
+ <br>
+<div id="output"></div>
+ </font> 
+<script>
 
+var quotearea = document.getElementById('quote')
+var output = document.getElementById('output')
+quotearea.addEventListener('mouseup', function(){
+    if (this.selectionStart != this.selectionEnd){ // check the user has selected some text inside field
+        var selectedtext = this.value.substring(this.selectionStart, this.selectionEnd)
+        output.innerHTML = selectedtext
+    }
+}, false)
+ 
+</script>
+</section>
+<br>
+<br>
     <footer>
-
+<br>
+<br>
         <body>
             <h3>
                 <font color="white" size="5">𝕳𝖔𝖕𝖊 𝕿𝖍𝖎𝖘 𝕳𝖊𝖑𝖕𝖘!</font>
@@ -2745,6 +3895,8 @@ function ULoutput1() {
                 <font color="white">and you can paste it almost anywhere! </font>
             </p>
         </body>
-    </footer>
+    </footer
+	
+	
 
 </html>
