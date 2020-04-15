@@ -1,3 +1,6 @@
+VirusTotal Scan Link to verify User Security:
+https://github.com/G6NK/Lit-Font-Generator/tree/master/LitFontGeneratorWebApp
+
 #!--------------------------------View Raw File---------------------------------!
 ~~.`      .*  *.   .                        ...     ...              ...       .
 .    `.x88`.`^x~`.`xH(`      `.ue%u.`  `.=*8888n  "%888:`     .x`H8%"    "`%.  .
