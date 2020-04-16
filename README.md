@@ -1,3 +1,7 @@
+-----------------NEW UPDATE:---------------
+added various features and fonts 04/16/2020
+
+
 VirusTotal Scan Link to verify User Security:
 https://github.com/G6NK/Lit-Font-Generator/tree/master/LitFontGeneratorWebApp
 
