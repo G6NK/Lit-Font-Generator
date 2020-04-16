@@ -1,5 +1,6 @@
 -----------------NEW UPDATE:---------------
 added various features and fonts 04/16/2020
+
   for people with previous verions you can  
 delete old version and download new version.
 
