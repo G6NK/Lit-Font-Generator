@@ -10,6 +10,7 @@ VirusTotal Scan Link to verify User Security:
 https://github.com/G6NK/Lit-Font-Generator/tree/master/LitFontGeneratorWebApp
 
 #!--------------------------------View Raw File---------------------------------!
+
 ~~.`      .*  *.   .                        ...     ...              ...       .
 .    `.x88`.`^x~`.`xH(`      `.ue%u.`  `.=*8888n  "%888:`     .x`H8%"    "`%.  .
 .   `X888` x`8`.`8888h`   .d`88`  z`8i`  X  ?`8888f` `888x`   x`888`         \ .
@@ -64,13 +65,16 @@ ysomd+hom+hm::omy/mNo:yd+yNmdooo//://osssysssshmNydmdmddNmdmNNmmm:shyhhm/hsyoo+m
 
 
 # Lit-Font-Generator
+
 Web Based Font Generator That Does Not Require Internet Access
 
 
--DirectionS-                                                                            
+-DirectionS- 
+                                                                           
                                                                   
 
-Simply place the folder in the master folder of your downloaded zip folder onto your desktop.
+Simply place the folder in the master folder of your downloaded zip folder 
+onto your desktop.
 You can drag the Lit Font Generator shortcut to your desktop for easy access.
 You can also use the hot key "ctrl+alt+L" to automatically open the web app.
 This will be updated often.
