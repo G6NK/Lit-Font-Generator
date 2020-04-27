@@ -5,10 +5,10 @@ added various features and fonts 04/16/2020
 for people with previous versions you can  
 delete old version and download new version.
 
- We Require No Password Or Usernames to Use Our Software.
-Software Does Not Request Access to the Internet, Your System Registry, Or any
-Files Outside The File It is Provided in, Except Your Browser As A Means To Ren-
-der The HTML, CSS, And JavaScript Into A Usable Service.
+ We Require No Password Or Usernames to Use Our Document Collection.
+This Collection Does Not Request Access to the Internet, Your System Registry, Or 
+Any Files Outside The File It is Provided in, Except Your Browser As A Means To 
+Render The HTML, CSS, And JavaScript Into A Usable Service.
 We do Not Request Data Or Have Any Analytics Processes.
 We Will Never Charge You For Services.
 If You find This Collection Being Distributed by A Third Party We Cannot Insure 
