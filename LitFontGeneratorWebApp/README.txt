@@ -1,6 +1,21 @@
+-----------------NEW UPDATE:---------------
 
+added various features and fonts 04/27/2020
+
+for people with previous versions you can  
+delete old version and download new version.
+
+ We Require No Password Or Usernames to Use Our Document Collection.
+This Collection Does Not Request Access to the Internet, Your System Registry, Or 
+Any Files Outside The File It is Provided in, Except Your Browser As A Means To 
+Render The HTML, CSS, And JavaScript Into A Usable Service.
+We do Not Request Data Or Have Any Analytics Processes.
+We Will Never Charge You For Services.
+If You find This Collection Being Distributed by A Third Party We Cannot Insure 
+That it Will be Safe to Use or Download. 
 
 #!--------------------------------View Raw File---------------------------------!
+
 ~~.`      .*  *.   .                        ...     ...              ...       .
 .    `.x88`.`^x~`.`xH(`      `.ue%u.`  `.=*8888n  "%888:`     .x`H8%"    "`%.  .
 .   `X888` x`8`.`8888h`   .d`88`  z`8i`  X  ?`8888f` `888x`   x`888`         \ .
@@ -52,16 +67,19 @@ hs+dm/hodood//smh/dNy+hho/-..``-.:.:/ss++ossmNmNNNmsdhmmymyd+md/-syhyhsNosys/o+h
 ysomd+hom+hm::omy/mNo:yd+yNmdooo//://osssysssshmNydmdmddNmdmNNmmm:shyhhm/hsyoo+m
 /hsmy+hhm/hm//dmo/md:-yy:sNmy/odhdymNNddMmysmsdhNsdyoyssmhshmsdymdsodshd/d+y+soN
 
-for updates check https://github.com/G6NK/Lit-Font-Generator/tree/master
+
 
 # Lit-Font-Generator
+
 Web Based Font Generator That Does Not Require Internet Access
 
 
--DirectionS-                                                                            
+-DirectionS- 
+                                                                           
                                                                   
 
-Simply place the folder onto your desktop.
+Simply place the folder in the master folder of your downloaded zip folder 
+onto your desktop.
 You can drag the Lit Font Generator shortcut to your desktop for easy access.
 You can also use the hot key "ctrl+alt+L" to automatically open the web app.
 This will be updated often.
